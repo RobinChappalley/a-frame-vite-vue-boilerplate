@@ -1,0 +1,13 @@
+services:
+  vr-app-helmet:
+    container_name: helmet-vr-boilerplate-app-container
+    image: helmet-vr-boilerplate-app-dockerimage-vr
+    build:
+      context: .
+      dockerfile: Dockerfile.vr
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    ports:
+      - "5173:5173"
+    command: npm run dev-expose

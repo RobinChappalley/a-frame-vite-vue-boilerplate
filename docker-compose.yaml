@@ -1,0 +1,13 @@
+services:
+  vr-app:
+    container_name: vr-boilerplate-app-container
+    image: vr-boilerplate-app-dockerimage
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    ports:
+      - "5174:5173"
+    command: npm run dev
