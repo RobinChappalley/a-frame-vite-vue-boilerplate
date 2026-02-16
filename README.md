@@ -39,28 +39,16 @@
 
 ### Create a folder for your project and move to it
 
-### Clone (or fork, or download)
+### Run the project
 
 ```sh
-git clone https://github.com/Chabloz/a-frame-vite-vue-boilerplate.git .
+ docker compose up --build
 ```
 
-### Install dependencies
+### Stop the project
 
 ```sh
-npm ci
-```
-
-### Dev
-
-```sh
-npm run dev
-```
-
-### Build
-
-```sh
-npm run build
+ docker compose down -v
 ```
 
 ## Notes for local dev on VR headset
@@ -70,7 +58,7 @@ npm run build
 2. Expose you local development:
 
 ```sh
-npm run dev-expose
+docker compose -f docker-compose-vr.yaml up --build
 ```
 
 3. In your VR headset, browse to the local development adress `[ip]:[port]`.
