@@ -4,6 +4,7 @@ import "../aframe/clickable.js";
 
 import TheCameraRig from "./TheCameraRig.vue";
 import TheOcean from "./TheOcean.vue";
+import TheIsland from "./TheIsland.vue";
 
 const allAssetsLoaded = ref(false);
 const color = ref("#8FD8E3");
@@ -12,7 +13,7 @@ const color = ref("#8FD8E3");
 <template>
   <a-scene
     background="color: black;"
-    fog="type: linear; color: #81BEC7; opacity: 0.5; near: 30; far: 45;"
+    fog="type: linear; color: #81BEC7; near: 30; far: 250;"
   >
     <a-assets @loaded="allAssetsLoaded = true">
       <img
@@ -24,6 +25,7 @@ const color = ref("#8FD8E3");
 
     <template v-if="allAssetsLoaded">
       <TheOcean> </TheOcean>
+      <TheIsland> </TheIsland>
     </template>
 
     <TheCameraRig />
