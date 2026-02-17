@@ -5,7 +5,7 @@ import "../aframe/clickable.js";
 import TheCameraRig from "./TheCameraRig.vue";
 
 const allAssetsLoaded = ref(false);
-const color = ref("tomato");
+const color = ref("#8FD8E3");
 </script>
 
 <template>
@@ -13,12 +13,18 @@ const color = ref("tomato");
     <a-assets @loaded="allAssetsLoaded = true"> </a-assets>
 
     <template v-if="allAssetsLoaded">
-      <a-box
-        position="0 0 -5"
-        :color="color"
+      <a-ocean
         clickable
-        @click="color = 'blue'"
-      ></a-box>
+        @click="toggle"
+        position="0 -3 0"
+        width="100"
+        depth="100"
+        amplitude="0.5"
+        amplitudevariance="0.05"
+        density="20"
+        opacity="0.8"
+        speed="1.8"
+      ></a-ocean>
     </template>
 
     <TheCameraRig />
