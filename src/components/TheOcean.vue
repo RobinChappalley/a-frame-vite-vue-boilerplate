@@ -19,8 +19,7 @@ const color = ref("#8FD8E3");
     position="0 0 0"
     width="500"
     depth="500"
-    amplitude="0.1"
-    amplitudevariance="0.05"
+    density="250"
     opacity="0.8"
     speed="1.8"
   ></a-ocean>
