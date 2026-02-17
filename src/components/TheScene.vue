@@ -3,28 +3,27 @@ import { ref } from "vue";
 import "../aframe/clickable.js";
 
 import TheCameraRig from "./TheCameraRig.vue";
+import TheOcean from "./TheOcean.vue";
 
 const allAssetsLoaded = ref(false);
 const color = ref("#8FD8E3");
 </script>
 
 <template>
-  <a-scene background="color: black;">
-    <a-assets @loaded="allAssetsLoaded = true"> </a-assets>
+  <a-scene
+    background="color: black;"
+    fog="type: linear; color: #81BEC7; opacity: 0.5; near: 30; far: 45;"
+  >
+    <a-assets @loaded="allAssetsLoaded = true">
+      <img
+        id="sky-texture"
+        src="/public/assets/citrus_orchard_puresky.jpg"
+        alt=""
+      />
+    </a-assets>
 
     <template v-if="allAssetsLoaded">
-      <a-ocean
-        clickable
-        @click="toggle"
-        position="0 -3 0"
-        width="100"
-        depth="100"
-        amplitude="0.5"
-        amplitudevariance="0.05"
-        density="20"
-        opacity="0.8"
-        speed="1.8"
-      ></a-ocean>
+      <TheOcean> </TheOcean>
     </template>
 
     <TheCameraRig />
