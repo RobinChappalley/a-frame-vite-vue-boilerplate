@@ -8,6 +8,7 @@ const color = ref("#D41500");
 <template>
   <a-entity>
     <a-hexa
+      duplicate="width:4 ,depth:2, gap:10"
       rotation="-90 0 0"
       position="0 0 0"
       radius="1"
