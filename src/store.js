@@ -1,4 +1,3 @@
-// src/store.js
 import { reactive } from 'vue';
 
 export const store = reactive({
@@ -18,7 +17,7 @@ export const store = reactive({
     this.isPlaying = true;
   },
 
-  addScore(points = 10) {
+  addScore(points) {
     if (this.isGameOver) return;
     this.score += points;
   },

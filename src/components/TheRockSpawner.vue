@@ -53,7 +53,7 @@ const removeRock = (id, hit = false) => {
   const rockIndex = rocks.value.findIndex(rock => rock.id === id);
   if (rockIndex !== -1) {
     if (hit) {
-      store.addScore(10);
+      store.addScore(1);
     } else {
       store.removeLife();
     }
