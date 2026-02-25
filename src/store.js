@@ -5,11 +5,17 @@ export const store = reactive({
   score: 0,
   lives: 3,
   isGameOver: false,
+  isPlaying: false,
 
   reset() {
     this.score = 0;
     this.lives = 3;
     this.isGameOver = false;
+  },
+
+  startGame() {
+    this.reset();
+    this.isPlaying = true;
   },
 
   addScore(points = 10) {
@@ -18,11 +24,12 @@ export const store = reactive({
   },
 
   removeLife() {
-    if (this.isGameOver) return;
+    if (this.isGameOver || !this.isPlaying) return;
     this.lives--;
     if (this.lives <= 0) {
       this.isGameOver = true;
-      // Ici on pourra déclencher un son de défaite plus tard
+      this.isPlaying = false;
     }
   }
 });
+
