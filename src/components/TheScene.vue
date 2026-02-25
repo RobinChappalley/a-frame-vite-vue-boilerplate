@@ -1,5 +1,6 @@
 <template>
   <a-scene 
+    @loaded="$emit('loaded')"
     background="color: black"
     bloom="strength: 0.6; radius: 0.5; threshold: 0.6"
   >

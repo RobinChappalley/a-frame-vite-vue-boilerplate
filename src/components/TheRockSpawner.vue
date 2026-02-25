@@ -6,6 +6,8 @@
     :key="rock.id"
     :position="`${rock.x} ${rock.y} -20`"
     :fly-forward="`speed: ${rock.speed}`"
+    hand-collision
+    @hit="removeRock(rock.id)"
     @out-of-bounds="removeRock(rock.id)"
   >
     <!-- Visuel de la roche -->
