@@ -12,7 +12,6 @@
     movement-controls="camera: #head;"
     disable-in-vr="component: movement-controls;"
   >
-
       <a-entity
         id="head"
         look-controls="pointerLockEnabled: true"

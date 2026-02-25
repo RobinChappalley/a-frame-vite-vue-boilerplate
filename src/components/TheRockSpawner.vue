@@ -7,8 +7,8 @@
     :position="`${rock.x} ${rock.y} -20`"
     :fly-forward="`speed: ${rock.speed}`"
     hand-collision
-    @hit="removeRock(rock.id)"
-    @out-of-bounds="removeRock(rock.id)"
+    @hit="removeRock(rock.id, true)"
+    @out-of-bounds="removeRock(rock.id, false)"
   >
     <!-- Visuel de la roche -->
     <a-dodecahedron 
@@ -23,7 +23,8 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, watch } from 'vue';
+import { store } from '../store.js';
 
 // --- ÉTAT DU JEU ---
 const rocks = ref([]);
@@ -33,6 +34,8 @@ let gameLoop;
 
 // Créer une roche
 const spawnRock = () => {
+  if (store.isGameOver) return;
+
   const id = Date.now();
   // Position X aléatoire (gauche/droite) entre -1.5 et 1.5
   const x = (Math.random() * 3) - 1.5;
@@ -45,13 +48,22 @@ const spawnRock = () => {
 };
 
 // Supprimer une roche
-const removeRock = (id) => {
+const removeRock = (id, hit = false) => {
   // On filtre le tableau pour garder tout sauf l'ID donné
-  rocks.value = rocks.value.filter(rock => rock.id !== id);
+  const rockIndex = rocks.value.findIndex(rock => rock.id === id);
+  if (rockIndex !== -1) {
+    if (hit) {
+      store.addScore(10);
+    } else {
+      store.removeLife();
+    }
+    rocks.value.splice(rockIndex, 1);
+  }
 };
 
 // --- CYCLE DE VIE VUE ---
 onMounted(() => {
+  store.reset();
   // Lancer le générateur toutes les secondes
   gameLoop = setInterval(spawnRock, 1000);
 });
@@ -60,4 +72,10 @@ onUnmounted(() => {
   // Nettoyer l'intervalle si on quitte la page pour ne pas faire bugger le navigateur
   clearInterval(gameLoop);
 });
+
+// Arrêter le spawner si Game Over
+watch(() => store.isGameOver, (isGameOver) => {
+  if (isGameOver) clearInterval(gameLoop);
+});
 </script>
+
