@@ -33,7 +33,6 @@ AFRAME.registerComponent('hand-collision', {
 
       if (distance < this.data.radius) {
         this.el.emit(this.data.event, { hand: handEl });
-        console.log('hit'); 
         // We remove the component to avoid multiple hit events for the same rock
         this.el.removeAttribute('hand-collision');
         break;
