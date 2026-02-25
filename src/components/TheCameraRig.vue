@@ -21,15 +21,6 @@
         position="0 1.65 0"
       >
         <a-entity
-          geometry="primitive: circle; radius: 0.0003;"
-          material="shader: flat; color: white;"
-          cursor
-          raycaster="far: 4; objects: [clickable]; showLine: false;"
-          position="0 0 -0.1"
-          disable-in-vr="component: raycaster; disableInAR: false;"
-          hide-in-vr="hideInAR: false"
-        ></a-entity>
-        <a-entity
           id="dummy-hand-right"
           position="0.3 -0.4 -0.5"
         ></a-entity>
@@ -40,7 +31,7 @@
       </a-entity>
 
       <a-entity
-        id="hand-left"
+        id="left-hand"
         hand-controls="hand: left"
         blink-controls="
           cameraRig: #camera-rig;
@@ -59,7 +50,7 @@
       </a-entity>
 
       <a-entity
-        id="hand-right"
+        id="right-hand"
         hand-controls="hand: right"
         laser-controls="hand: right"
         raycaster="far: 4; objects: [clickable]; showLine: true;"

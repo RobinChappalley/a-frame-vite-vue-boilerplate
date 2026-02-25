@@ -63,19 +63,25 @@ const removeRock = (id, hit = false) => {
 
 // --- CYCLE DE VIE VUE ---
 onMounted(() => {
-  store.reset();
-  // Lancer le générateur toutes les secondes
-  gameLoop = setInterval(spawnRock, 1000);
+  // On ne lance plus l'intervalle ici, on attend isPlaying
 });
 
 onUnmounted(() => {
-  // Nettoyer l'intervalle si on quitte la page pour ne pas faire bugger le navigateur
+  // Nettoyer l'intervalle si on quitte la page
   clearInterval(gameLoop);
 });
 
-// Arrêter le spawner si Game Over
-watch(() => store.isGameOver, (isGameOver) => {
-  if (isGameOver) clearInterval(gameLoop);
+// Gérer le démarrage et l'arrêt du jeu
+watch(() => store.isPlaying, (isPlaying) => {
+  if (isPlaying) {
+    // Vider les roches restantes d'une partie précédente
+    rocks.value = [];
+    // Lancer le générateur
+    gameLoop = setInterval(spawnRock, 1000);
+  } else {
+    clearInterval(gameLoop);
+  }
 });
 </script>
+
 

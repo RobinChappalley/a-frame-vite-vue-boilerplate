@@ -1,5 +1,5 @@
 <template>
-  <a-entity v-bind="$atrs"
+  <a-entity v-bind="$attrs"
   rotation="0 45 0"
   >
     <!-- FOND DU PANNEAU -->
