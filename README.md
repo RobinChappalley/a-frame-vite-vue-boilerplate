@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./logo.png" alt="Smash Lab Logo" align="center" width="200"/>
+    <img src="/public/assets/logo.png" alt="Smash Lab Logo" align="center" width="200"/>
 </p>
 <h1 align="center">Smash Lab</h1>
 
