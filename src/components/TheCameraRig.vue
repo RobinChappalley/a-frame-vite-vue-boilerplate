@@ -21,6 +21,15 @@
         position="0 1.65 0"
       >
         <a-entity
+          id="cursor"
+          geometry="primitive: ring; radiusInner: 0.001; radiusOuter: 0.002;"
+          material="shader: flat; color: white; opacity: 0.8"
+          cursor="fuse: false"
+          raycaster="far: 10; objects: [clickable]; showLine: false;"
+          position="0 0 -0.1"
+          hide-in-vr="hideInAR: false"
+        ></a-entity>
+        <a-entity
           id="dummy-hand-right"
           position="0.3 -0.4 -0.5"
         ></a-entity>

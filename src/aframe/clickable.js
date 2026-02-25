@@ -26,7 +26,7 @@ AFRAME.registerComponent('clickable', {
       if (saveLast) this.savedColor = this.cursor.getAttribute('raycaster').lineColor;
       this.cursor.setAttribute('raycaster', 'lineColor', color);
     } else {
-      if (this.cursor.getAttribute('material') === null) return;
+      if (!this.cursor.getAttribute('material')) return;
       if (saveLast) this.savedColor = this.cursor.getAttribute('material').color;
       this.cursor.setAttribute('material', 'color', color);
     }

@@ -3,8 +3,6 @@
     @loaded="$emit('loaded')"
     background="color: black"
     bloom="strength: 0.6; radius: 0.5; threshold: 0.6"
-    cursor="rayOrigin: mouse"
-    raycaster="objects: [clickable]"
   >
     <!-- ENVIRONNEMENT & LUMIERE -->
     <a-entity environment="preset: volcano; groundColor: #440000; dressingAmount: 10; skyType: atmosphere; lighting: point"></a-entity>
