@@ -1,9 +1,9 @@
 <p align="center">
-    <img src="./logo.svg" alt="VAV Logo" align="center"/>
+    <img src="./logo.png" alt="Smash Lab Logo" align="center" width="200"/>
 </p>
-<h1 align="center">Vue + A-Frame + Vite boilerplate</h1>
+<h1 align="center">Smash Lab</h1>
 
-> A boilerplate for A-Frame, Vue and Vite
+
 
 ![Vue.js](https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)
 ![A-Frame](https://img.shields.io/badge/A%E2%80%93Frame-brightgreen?style=for-the-badge&labelColor=%23ef2d5e&color=%23ef2d5e)
@@ -12,8 +12,6 @@
 
 ### [>> DEMO <<](https://onivers.com/aframe-vue-boilerplate/)
 
-## Included in the boilerplate
-
 ### Libs and components
 
 - [aframe-extras](https://github.com/c-frame/aframe-extras) (MIT License)
@@ -21,6 +19,7 @@
 - [aframe-blink-controls](https://github.com/jure/aframe-blink-controls) (MIT License)
 - [aframe-multi-camera](https://github.com/diarmidmackenzie/aframe-multi-camera/) (MIT License)
 - [simple-navmesh-constraint](https://github.com/AdaRoseCannon/aframe-xr-boilerplate) (MIT Licence)
+- [a-frame-environment-component](https://github.com/c-frame/aframe-environment-component) (MIT License)
 
 ### Movement modes support
 
@@ -30,8 +29,9 @@
 
 ### 3D models
 
-- **Main room** – [VR Gallery](https://sketchfab.com/3d-models/vr-gallery-1ac32ed62fdf424498acc146fad31f7e) by [Maxim Mavrichev](https://sketchfab.com/mvrc.art) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-- **3D physic room** – [3d_gallery_for_vr_projects](https://sketchfab.com/3d-models/3d-gallery-for-vr-projects-68f77ed8558c4bd59e0a13e2cc9d1fd1) by [tekuto1s](https://sketchfab.com/tekuto1s) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+
+
+- **Hearts** – [Love Low Poly](https://sketchfab.com/3d-models/love-low-poly-6xsuX) by [VARRRG](https://sketchfab.com/vrrrg) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ---
 
