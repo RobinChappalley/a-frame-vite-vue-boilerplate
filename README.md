@@ -19,7 +19,7 @@
 - [aframe-blink-controls](https://github.com/jure/aframe-blink-controls) (MIT License)
 - [aframe-multi-camera](https://github.com/diarmidmackenzie/aframe-multi-camera/) (MIT License)
 - [simple-navmesh-constraint](https://github.com/AdaRoseCannon/aframe-xr-boilerplate) (MIT Licence)
-- [a-frame-environment-component](https://github.com/c-frame/aframe-environment-component) (MIT License)
+- [a-frame-environment-component](https://github.com/supermedium/aframe-environment-component) (MIT License)
 
 ### Movement modes support
 
@@ -31,7 +31,7 @@
 
 
 
-- **Hearts** – [Love Low Poly](https://sketchfab.com/3d-models/love-low-poly-6xsuX) by [VARRRG](https://sketchfab.com/vrrrg) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- **Hearts** – [Love Low Poly](https://sketchfab.com/3d-models/love-low-poly-dd3b881a34904991878dc6a5a05aa1f6) by [VARRRG](https://sketchfab.com/VladislavFehu) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ---
 
