@@ -33,10 +33,13 @@ AFRAME.registerComponent('hand-collision', {
 
       if (distance < this.data.radius) {
         this.el.emit(this.data.event, { hand: handEl });
+        // Emit an event directly to the hand so it can trigger haptics
+        handEl.emit('haptic-hit');
         // We remove the component to avoid multiple hit events for the same rock
         this.el.removeAttribute('hand-collision');
         break;
       }
+
     }
   }
 });
