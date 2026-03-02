@@ -6,9 +6,9 @@
     @hit="removeRock(rock.id, true)" @out-of-bounds="removeRock(rock.id, false)">
 
     <!-- Visuel de la roche (Si pas touchée) -->
-    <a-dodecahedron v-if="!rock.isHit" radius="0.4" color="#330000"
-      material="roughness: 1; emissive: #ff4400; emissiveIntensity: 0.5">
-      <a-entity light="type: point; color: #ff0000; distance: 2; intensity: 2"></a-entity>
+    <a-dodecahedron v-if="!rock.isHit" radius="0.4" color="#aa3300"
+      material="roughness: 0.9; metalness: 0.2; flatShading: true; emissive: #330000">
+      <a-entity light="type: point; color: #ff0000; distance: 2; intensity: 1"></a-entity>
     </a-dodecahedron>
 
     <!-- EFFET D'EXPLOSION (Si touchée) - On l'éloigne de 0.5m pour qu'il ne soit pas "dans les yeux" -->
