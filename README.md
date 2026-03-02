@@ -20,6 +20,7 @@
 - [aframe-multi-camera](https://github.com/diarmidmackenzie/aframe-multi-camera/) (MIT License)
 - [simple-navmesh-constraint](https://github.com/AdaRoseCannon/aframe-xr-boilerplate) (MIT Licence)
 - [a-frame-environment-component](https://github.com/supermedium/aframe-environment-component) (MIT License)
+-[Explosion sound](https://pixabay.com/sound-effects/film-special-effects-medium-explosion-40472/)
 
 ### Movement modes support
 
