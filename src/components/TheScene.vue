@@ -24,7 +24,6 @@
 
       <TheScoreBoard position="-2 2 -3" rotation="0 45 0" />
 
-      <TheScoreBoard position="2 2 -3" rotation="0 -45 0" />
 
       <!-- MENU DE DÉPART -->
       <TheGameMenu v-if="!store.isPlaying" position="0 1.2 -1.2" rotation="-30 0 0 " />

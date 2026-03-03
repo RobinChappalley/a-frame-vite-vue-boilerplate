@@ -28,6 +28,7 @@
 - [8-bit music](https://www.youtube.com/watch?v=mRN_T6JkH-c&list=PLwJjxqYuirCLkq42mGw4XKGQlpZSfxsYd)
 - [Losing sound](https://www.youtube.com/watch?v=FVJJKIJWKdc)
 - [Audio assets](https://www.youtube.com/watch?v=SoZhpnTuQBo)
+- [Bonus sound](https://www.youtube.com/watch?v=5v20ztxGvQ0)
 
 ### Movement modes support
 

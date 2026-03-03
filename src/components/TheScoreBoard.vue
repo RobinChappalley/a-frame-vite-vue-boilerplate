@@ -1,11 +1,16 @@
 <template>
   <a-entity v-bind="$attrs" rotation="0 45 0">
     <!-- FOND DU PANNEAU -->
-    <a-plane width="2.2" height="0.6" color="#222" material="shader: flat; opacity: 0.9">
-      <a-entity position="0 0 0.01">
+    <a-plane width="2.2" height="1" color="#222" material="shader: flat; opacity: 0.9">
+      <a-entity position="0 0.1 0.01">
         <!-- AFFICHE LE SCORE -->
-        <a-text :value="`SCORE: ${store.score}`" position="-0.6 0 0" color="#FFD700" align="left" scale="1.2 1.2 1.2"
+        <a-text :value="`SCORE: ${store.score}`" position="0 0.2 0" color="#FFD700" align="center" scale="1.2 1.2 1.2"
           font="exo2bold"></a-text>
+
+        <!-- AFFICHE LE COMBO -->
+        <a-text v-if="store.combo > 1" :value="`Streak: ${store.combo}`" position="0 -0.2 0" color="#FF8800"
+          align="center" scale="1.2 1.2 1.2" font="exo2bold"
+          animation="property: scale; to: 1.4 1.4 1.4; dur: 200; dir: alternate; loop: 2; startEvents: combo-changed"></a-text>
       </a-entity>
     </a-plane>
 
@@ -14,7 +19,7 @@
     <!-- ÉLÉMENTS DE TEXTE -->
 
     <!-- AFFICHE LES VIES (Cœurs visuels) -->
-    <a-entity position="0 -1 0">
+    <a-entity position="0 -1.4 0">
       <a-entity v-for="i in 3" :key="i" :position="`${(i - 2) * 0.85} 0 0`" scale="0.01 0.01 0.01"
         gltf-model="#heart-model" :material="store.lives < i ? 'opacity: 0.3; transparent: true' : ''"
         :visible="store.lives >= i" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear">
