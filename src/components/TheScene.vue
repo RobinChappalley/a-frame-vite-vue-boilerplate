@@ -11,6 +11,7 @@
       <audio id="loss-2" src="assets/life-loss/2-life-loss.mp3" preload="auto"></audio>
       <audio id="loss-3" src="assets/life-loss/3-life-loss.mp3" preload="auto"></audio>
       <audio id="new-life" src="assets/new-life.mp3" preload="auto"></audio>
+      <audio id="full-life" src="assets/full-life.mp3" preload="auto"></audio>
     </a-assets>
 
 
@@ -39,6 +40,7 @@
       <a-entity id="sound-loss-2" sound="src: #loss-2; autoplay: false; volume: 1.5"></a-entity>
       <a-entity id="sound-loss-3" sound="src: #loss-3; autoplay: false; volume: 1.5"></a-entity>
       <a-entity id="sound-new-life" sound="src: #new-life; autoplay: false; volume: 1.5"></a-entity>
+      <a-entity id="sound-full-life" sound="src: #full-life; autoplay: false; volume: 2.5"></a-entity>
 
       <TheRockSpawner />
     </template>
@@ -49,13 +51,26 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch, onMounted } from 'vue';
 import { store } from '../store.js';
 import TheCameraRig from './TheCameraRig.vue';
 import TheRockSpawner from './TheRockSpawner.vue';
 import TheScoreBoard from './TheScoreBoard.vue';
 import TheGameMenu from './TheGameMenu.vue';
 const allAssetsLoaded = ref(false);
+
+onMounted(() => {
+  const sceneEl = document.querySelector('a-scene');
+  if (sceneEl) {
+    sceneEl.addEventListener('full-life-warning', () => {
+      const soundEl = document.querySelector('#sound-full-life');
+      if (soundEl && soundEl.components.sound) {
+        soundEl.components.sound.stopSound();
+        soundEl.components.sound.playSound();
+      }
+    });
+  }
+});
 
 // Gérer la musique d'ambiance
 watch(() => store.isPlaying, (isPlaying) => {
