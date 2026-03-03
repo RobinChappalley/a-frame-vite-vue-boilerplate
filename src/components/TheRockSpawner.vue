@@ -19,8 +19,10 @@
       </a-dodecahedron>
 
       <!-- Visuel du Coeur (Bonus +1 Vie) -->
-      <a-entity v-else-if="rock.type === 'heart'" gltf-model="#heart-model" scale="0.015 0.015 0.015"
+      <a-entity v-else-if="rock.type === 'heart'"
         animation="property: rotation; to: 0 360 0; loop: true; dur: 2000; easing: linear">
+        <!-- On descend le modèle pour que le centre visuel du coeur corresponde à l'origine (centre de la collision) -->
+        <a-entity gltf-model="#heart-model" scale="0.015 0.015 0.015" position="0 -0.3 0"></a-entity>
         <a-entity light="type: point; color: #ff0088; distance: 2; intensity: 1"></a-entity>
       </a-entity>
     </template>
@@ -43,6 +45,8 @@ let difficultyTimeout;
 const GAME_WIDTH = 2;
 const BASE_SPEED = 4;
 const BASE_INTERVAL = 1200;
+const COINSSPAWNPERCENTAGE = 0.05;
+const HEARTSPAWNPERCENTAGE = 0.15;
 
 // Créer une roche
 const spawnRock = () => {
@@ -58,9 +62,12 @@ const spawnRock = () => {
   // Attribution du type de roche (probabilités de spawn)
   const rand = Math.random();
   let type = 'normal';
-  if (rand > 0.95) {
+  if (rand < COINSSPAWNPERCENTAGE) {
+    console.log(rand);
+
     type = 'heart'; // 5% de chance
-  } else if (rand > 0.85) {
+  } else if (rand > 1 - HEARTSPAWNPERCENTAGE) {
+    console.log(rand);
     type = 'golden'; // 10% de chance
   }
 
@@ -91,10 +98,16 @@ const removeRock = (id, hit = false) => {
 
     if (hit) {
       if (rock.type === 'golden') {
-        store.addScore(10);
+        store.addCoin(1);
       } else if (rock.type === 'heart') {
-        store.addLife();
-        store.addScore(1);
+        const lifeAdded = store.addLife();
+        if (!lifeAdded) {
+          // Si les vies étaient déjà pleines, on prévient le système
+          const sceneEl = document.querySelector('a-scene');
+          if (sceneEl) sceneEl.emit('full-life-warning');
+        } else {
+          store.addScore(1);
+        }
       } else {
         store.addScore(1);
       }

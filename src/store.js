@@ -6,6 +6,7 @@ export const store = reactive({
   level: 1,
   difficulty: 1,
   combo: 0,
+  coins: 0,
   isGameOver: false,
   isPlaying: false,
 
@@ -42,7 +43,14 @@ export const store = reactive({
     if (this.isGameOver || !this.isPlaying) return;
     if (this.lives < 3) {
       this.lives++;
+      return true; // Vie rajoutée avec succès
     }
+    return false; // Déjà max vies
+  },
+
+  addCoin(amount = 1) {
+    if (this.isGameOver || !this.isPlaying) return;
+    this.coins += amount;
   },
 
   incrementCombo() {
