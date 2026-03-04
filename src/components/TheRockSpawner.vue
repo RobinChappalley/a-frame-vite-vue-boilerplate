@@ -28,7 +28,9 @@
     </template>
 
     <!-- EFFET D'EXPLOSION (Si touchée) - On l'éloigne de 0.5m pour qu'il ne soit pas "dans les yeux" -->
-    <a-entity v-else explode position="0 0 -0.5"
+    <a-entity v-else
+      :explode="`color: ${rock.type === 'normal' ? store.worlds[store.currentWorld].rockColor : (rock.type === 'golden' ? '#ffcc00' : '#ff0088')}`"
+      position="0 0 -0.5"
       :sound="rock.type === 'heart' ? '' : `src: ${rock.type === 'golden' ? '#boost-sound' : '#hit-sound'}; autoplay: true; volume: 2; positional: true`"></a-entity>
   </a-entity>
 </template>

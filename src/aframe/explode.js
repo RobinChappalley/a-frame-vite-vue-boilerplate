@@ -1,6 +1,10 @@
 AFRAME.registerComponent('explode', {
+  schema: {
+    color: { type: 'color', default: '#ff5500' }
+  },
   init: function () {
     const el = this.el;
+    const explodeColor = this.data.color;
 
     // 1. FLASH PLUS DISCRET
     // On réduit la taille et la durée pour ne pas masquer les débris
@@ -23,7 +27,6 @@ AFRAME.registerComponent('explode', {
 
     // 2. DÉBRIS PLUS VISIBLES ET NOMBREUX
     // On augmente le nombre, on ajoute de l'émissivité pour qu'ils "brillent"
-    const colors = ['#ffcc00', '#ff5500', '#ff0000', '#ffffff'];
     const fragmentsCount = 16; 
     
     for (let i = 0; i < fragmentsCount; i++) {
@@ -31,8 +34,8 @@ AFRAME.registerComponent('explode', {
       const size = 0.1 + Math.random() * 0.15;
       fragment.setAttribute('radius', size);
       fragment.setAttribute('material', {
-        color: colors[Math.floor(Math.random() * colors.length)],
-        emissive: colors[Math.floor(Math.random() * colors.length)],
+        color: explodeColor,
+        emissive: explodeColor,
         emissiveIntensity: 1.5,
         roughness: 0
       });
@@ -74,7 +77,7 @@ AFRAME.registerComponent('explode', {
     shockwave.setAttribute('radius-inner', '0.1');
     shockwave.setAttribute('radius-outer', '0.2');
     shockwave.setAttribute('rotation', '-90 0 0');
-    shockwave.setAttribute('material', 'color: #ffaa00; transparent: true; opacity: 0.8');
+    shockwave.setAttribute('material', `color: ${explodeColor}; transparent: true; opacity: 0.8`);
     shockwave.setAttribute('animation__scale', {
       property: 'scale',
       to: '10 10 10',
@@ -90,7 +93,7 @@ AFRAME.registerComponent('explode', {
 
     // 4. LUMIÈRE ÉPHÉMÈRE
     const light = document.createElement('a-entity');
-    light.setAttribute('light', 'type: point; color: #ffaa00; intensity: 10; distance: 10');
+    light.setAttribute('light', `type: point; color: ${explodeColor}; intensity: 10; distance: 10`);
     light.setAttribute('animation__fade', {
       property: 'light.intensity',
       to: '0',
