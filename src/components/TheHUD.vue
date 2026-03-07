@@ -5,8 +5,8 @@
         <a-entity position="-0.30 -0.15 0" scale="0.15 0.15 0.15">
             <a-text :value="`SCORE: ${store.score}`" position="0 0 0" color="#FFD700" align="left" font="exo2bold"
                 opacity="0.9"></a-text>
-            <a-text :value="`COINS: ${store.coins}`" position="0 -0.2 0" color="#00FFDD" align="left" font="exo2bold"
-                opacity="0.9"></a-text>
+            <a-text :value="`TOTAL COINS: ${store.coins}`" position="0 -0.2 0" color="#00FFDD" align="left"
+                font="exo2bold" opacity="0.9"></a-text>
             <a-text v-if="store.combo > 1" :value="`COMBO: ${store.combo}x`" position="0 -0.4 0" color="#FF8800"
                 align="left" font="exo2bold" opacity="0.9"
                 animation="property: scale; to: 1.1 1.1 1.1; dur: 200; dir: alternate; loop: 2; startEvents: combo-changed">

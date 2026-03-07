@@ -8,8 +8,8 @@
           font="exo2bold"></a-text>
 
         <!-- AFFICHE LES PIÈCES -->
-        <a-text :value="`COINS: ${store.coins}`" position="0 -0.05 0" color="#00FFDD" align="center" scale="1.2 1.2 1.2"
-          font="exo2bold"></a-text>
+        <a-text :value="`TOTAL COINS: ${store.coins}`" position="0 -0.05 0" color="#00FFDD" align="center"
+          scale="1.2 1.2 1.2" font="exo2bold"></a-text>
 
         <!-- AFFICHE LE COMBO -->
         <a-text :value="`Streak: ${store.combo}`" position="0 -0.35 0" color="#FF8800" align="center"
