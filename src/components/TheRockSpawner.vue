@@ -65,11 +65,8 @@ const spawnRock = () => {
   const rand = Math.random();
   let type = 'normal';
   if (rand < COINSSPAWNPERCENTAGE) {
-    console.log(rand);
-
     type = 'heart'; // 5% de chance
   } else if (rand > 1 - HEARTSPAWNPERCENTAGE) {
-    console.log(rand);
     type = 'golden'; // 10% de chance
   }
 
