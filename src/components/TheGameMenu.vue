@@ -17,15 +17,21 @@
 
         <!-- STATISTIQUES (Seulement au Game Over) -->
         <a-entity v-if="store.isGameOver" position="0 0.7 0">
-          <a-text :value="`Score: ${store.score}`" position="0 0.25 0" align="center" color="#FFD700" width="3"
+          <a-text :value="`Score: ${store.score}`" position="0 0.35 0" align="center" color="#FFD700" width="3"
             scale="1.2 1.2 1.2"></a-text>
-          <a-text :value="`Level: ${store.level}`" position="0 0 0" align="center" color="#CCC" width="3"
-            scale="1.2 1.2 1.2"></a-text>
-          <a-text :value="`Coins: ${store.coins}`" position="0 -0.25 0" align="center" color="#00FFDD" width="3"
+
+          <a-text :value="`Coins found: ${store.sessionCoins}`" position="0 0.15 0" align="center" color="#CCC"
+            width="2.5" scale="1.1 1.1 1.1"></a-text>
+
+          <a-text v-if="store.bestCombo > 0"
+            :value="`Streak Bonus: +${Math.round(store.sessionCoins * (store.bestCombo / 100))}`" position="0 0 0"
+            align="center" color="#FF8800" width="2.5" scale="1.1 1.1 1.1"></a-text>
+
+          <a-text :value="`Total Coins: ${store.coins}`" position="0 -0.2 0" align="center" color="#00FFDD" width="2.8"
             scale="1.2 1.2 1.2"></a-text>
 
           <!-- NOUVEAU RECORD -->
-          <a-text v-if="store.score > 0 && store.score === store.bestScore" value="NEW RECORD !" position="0 -0.52 0"
+          <a-text v-if="store.score > 0 && store.score === store.bestScore" value="NEW RECORD !" position="0 -0.5 0"
             scale="1.5 1.5 1.5" align="center" color="#ffaa00" width="2.5"
             animation="property: opacity; from: 1; to: 0.2; dir: alternate; loop: true; dur: 2000"></a-text>
           <a-text v-else-if="store.bestScore > 0" :value="`Best Score: ${store.bestScore}`" position="0 -0.5 0"

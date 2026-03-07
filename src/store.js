@@ -6,6 +6,8 @@ export const store = reactive({
   level: 1,
   difficulty: 1,
   combo: 0,
+  bestCombo: 0,
+  sessionCoins: 0,
   coins: 1000,
   bestScore: 0,
   currentWorld: 'void',
@@ -43,6 +45,8 @@ export const store = reactive({
     this.level = 1;
     this.difficulty = 1;
     this.combo = 0;
+    this.bestCombo = 0;
+    this.sessionCoins = 0;
     this.isGameOver = false;
   },
 
@@ -66,6 +70,10 @@ export const store = reactive({
       if (this.score > this.bestScore) {
         this.bestScore = this.score;
       }
+      
+      // Bonus de pièces à la fin de la partie : sessionCoins * (bestCombo / 100)
+      const bonusCoins = Math.round(this.sessionCoins * (this.bestCombo / 100));
+      this.coins += bonusCoins;
     }
   },
 
@@ -81,6 +89,7 @@ export const store = reactive({
   addCoin(amount = 1) {
     if (this.isGameOver || !this.isPlaying) return;
     this.coins += amount;
+    this.sessionCoins += amount;
   },
 
   removeCoin(amount = 1) {
@@ -91,6 +100,9 @@ export const store = reactive({
 
   incrementCombo() {
     this.combo++;
+    if (this.combo > this.bestCombo) {
+      this.bestCombo = this.combo;
+    }
   },
 
   resetCombo() {
