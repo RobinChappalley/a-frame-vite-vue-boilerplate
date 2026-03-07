@@ -15,7 +15,7 @@
 
         <!-- LES VIES (Cœurs) - Haut Droit -->
         <a-entity position="0.20 -0.15 0" scale="0.15 0.15 0.15">
-            <a-entity v-for="i in 3" :key="i" :position="`${(i - 1) * 0.4} 0 0`" scale="0.006 0.006 0.006"
+            <a-entity v-for="i in store.lives" :key="i" :position="`${(i - 1) * 0.4} 0 0`" scale="0.006 0.006 0.006"
                 gltf-model="#heart-model" :material="store.lives < i ? 'opacity: 0.2; transparent: true' : ''"
                 :visible="store.lives >= i"
                 animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear">
