@@ -1,7 +1,8 @@
 <template>
   <!-- 🚀 LES ROCHES VOLCANIQUES (BOUCLE VUE) -->
   <!-- On utilise v-for pour afficher chaque roche du tableau 'rocks' -->
-  <a-entity v-for="rock in rocks" :key="rock.id" :position="`${rock.x} ${rock.y} -20`"
+  <a-entity v-for="rock in rocks" :key="rock.id" :position="`${rock.x} ${rock.y} -40`"
+    animation__spawn="property: scale; from: 0 0 0; to: 1 1 1; dur: 600; easing: easeOutQuad"
     :fly-forward="`speed: ${rock.isHit ? 0 : rock.speed}`" :hand-collision="rock.isHit ? null : ''"
     @hit="removeRock(rock.id, true)" @out-of-bounds="removeRock(rock.id, false)">
 
