@@ -13,6 +13,7 @@
       <audio id="new-life" src="assets/new-life.mp3" preload="auto"></audio>
       <audio id="full-life" src="assets/full-life.mp3" preload="auto"></audio>
       <audio id="error-sfx" src="assets/hit.mp3" preload="auto"></audio>
+      <audio id="no-money-asset" src="assets/no-money.mp3" preload="auto"></audio>
     </a-assets>
 
 
@@ -61,6 +62,7 @@
       <a-entity id="sound-new-life" sound="src: #new-life; autoplay: false; volume: 1.5"></a-entity>
       <a-entity id="sound-full-life" sound="src: #full-life; autoplay: false; volume: 2.5"></a-entity>
       <a-entity id="error-sound" sound="src: #error-sfx; autoplay: false; volume: 1; pitch: 0.5"></a-entity>
+      <a-entity id="sound-no-money" sound="src: #no-money-asset; autoplay: false; volume: 1.5"></a-entity>
     </template>
     <TheCameraRig />
 

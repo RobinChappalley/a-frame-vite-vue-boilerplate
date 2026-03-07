@@ -108,6 +108,21 @@ export const store = reactive({
 
   resetCombo() {
     this.combo = 0;
+  },
+
+  nomoney() {
+    this.showCoinError = true;
+    
+    // Joue le son d'erreur d'achat
+    const soundEl = document.querySelector('#sound-no-money');
+    if (soundEl && soundEl.components.sound) {
+      soundEl.components.sound.stopSound();
+      soundEl.components.sound.playSound();
+    }
+    
+    setTimeout(() => {
+      this.showCoinError = false;
+    }, 2500);
   }
 });
 

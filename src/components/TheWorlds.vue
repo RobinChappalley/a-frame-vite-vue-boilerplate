@@ -1,12 +1,7 @@
 <template>
     <a-entity>
         <!-- PANNEAU D'ERREUR (S'affiche si on a pas assez de pièces) -->
-        <a-entity v-if="store.showCoinError" position="0 0.5 -2"
-            animation="property: scale; from: 0 0 0; to: 1 1 1; dur: 200; easing: easeOutElastic">
-            <a-plane width="2.5" height="0.6" color="#ff0000" opacity="0.8" material="shader: flat"></a-plane>
-            <a-text value="Not enough coins !" align="center" position="0 0 0.05" width="4" color="#ffffff"
-                font="exo2bold"></a-text>
-        </a-entity>
+
 
         <a-entity v-for="(world, key, index) in store.worlds" :key="key">
             <a-light type="point" :position="`0 ${-80 + (index * 20)} 0`"></a-light>
@@ -56,18 +51,7 @@ const selectWorld = (key, index) => {
     }
     // Pas débloqué et pas d'argent
     else {
-        store.showCoinError = true;
-
-        // Joue un son d'erreur d'interface (S'il existe)
-        const soundEl = document.querySelector('#error-sound');
-        if (soundEl && soundEl.components.sound) {
-            soundEl.components.sound.stopSound();
-            soundEl.components.sound.playSound();
-        }
-
-        setTimeout(() => {
-            store.showCoinError = false;
-        }, 2500);
+        store.nomoney();
     }
 };
 </script>
