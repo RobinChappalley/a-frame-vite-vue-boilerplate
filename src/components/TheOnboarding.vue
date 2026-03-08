@@ -106,6 +106,69 @@ function enterScene() {
               target="_blank">MIT License</a>
           </dd>
 
+          <dt>
+            <a href="https://github.com/dmarcos/a-invaders/blob/master/js/components/explode.js"
+              target="_blank">aframe-explode</a>
+          </dt>
+          <dd>
+            Under MIT License
+          </dd>
+
+          <dt>
+            <a href="https://github.com/supermedium/superframe/tree/master/components/haptics"
+              target="_blank">aframe-haptics</a>
+          </dt>
+          <dd>
+            Under MIT License
+          </dd>
+
+          <dt>
+            <a href="https://pixabay.com/sound-effects/film-special-effects-medium-explosion-40472/"
+              target="_blank">Explosion sound</a>
+          </dt>
+          <dd>
+            From Pixabay
+          </dd>
+
+          <dt>
+            <a href="https://www.youtube.com/watch?v=mRN_T6JkH-c&list=PLwJjxqYuirCLkq42mGw4XKGQlpZSfxsYd"
+              target="_blank">8-bit music</a>
+          </dt>
+          <dd>
+            From YouTube
+          </dd>
+
+          <dt>
+            <a href="https://www.youtube.com/watch?v=FVJJKIJWKdc" target="_blank">Losing sound</a>
+          </dt>
+          <dd>
+            From YouTube
+          </dd>
+
+          <dt>
+            <a href="https://www.youtube.com/watch?v=SoZhpnTuQBo" target="_blank">Audio assets</a>
+          </dt>
+          <dd>
+            From YouTube
+          </dd>
+
+          <dt>
+            <a href="https://www.youtube.com/watch?v=5v20ztxGvQ0" target="_blank">Bonus sound</a>
+          </dt>
+          <dd>
+            From YouTube
+          </dd>
+
+          <dt>
+            <a href="https://sketchfab.com/3d-models/boxing-gloves-9d244a5bfaf84ea398cff99154e99eab"
+              target="_blank">Boxing Gloves</a>
+          </dt>
+          <dd>
+            by <a href="https://sketchfab.com/rxf10240" target="_blank">ayumi ikeda</a> under <a
+              href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY
+              4.0</a>
+          </dd>
+
         </dl>
       </div>
     </div>
