@@ -1,11 +1,5 @@
 <template>
     <a-entity>
-        <!-- PANNEAU D'ERREUR (S'affiche si on a pas assez de pièces) -->
-
-        <!-- DEBUG GLOVES : Affiché au dessus des mondes -->
-        <a-entity gltf-model="#gloves-model" position="0 1 -2" scale="0.5 0.5 0.5"
-            animation="property: rotation; to: 0 360 0; loop: true; dur: 5000"></a-entity>
-
         <a-entity v-for="(world, key, index) in store.worlds" :key="key">
             <a-light type="point" :position="`0 ${-80 + (index * 20)} 0`"></a-light>
             <!-- On exclut 'void' du système de sélection puisqu'il est par défaut -->
